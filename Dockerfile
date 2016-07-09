@@ -7,13 +7,11 @@ RUN mkdir -p /usr/share/maven \
     | tar -xzC /usr/share/maven --strip-components=1 \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
   && useradd --create-home user \
-  && mkdir /build \
   && mkdir /home/user/.m2 \
-  && chown user:user /build /home/user/.m2
+  && chown user:user /home/user/.m2
 
 ENV MAVEN_HOME /usr/share/maven
 VOLUME ["/home/user/.m2"]
-WORKDIR /build
 USER user
 ENTRYPOINT ["mvn"]
 CMD ["--version"]
