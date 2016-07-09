@@ -13,5 +13,4 @@ RUN mkdir -p /usr/share/maven \
 ENV MAVEN_HOME /usr/share/maven
 VOLUME ["/home/user/.m2"]
 USER user
-ENTRYPOINT ["mvn"]
-CMD ["--version"]
+CMD ["mvn", "--version"]
