@@ -5,4 +5,4 @@
   running Maven is not `root` but `user` and `/home/user/.m2/`
   is exposed as volume, so you may easily use your own 
   `settings.xml`
-* Run `docker --rm -v $HOME/.m2:/home/user/.m2 -v $PWD:/build -w /build mfriedenhagen/docker-maven mvn clean verify`.
+* Run `docker run --rm -v $HOME/.m2:/home/user/.m2 -v $PWD:/build -w /build mfriedenhagen/docker-maven mvn clean verify`.
