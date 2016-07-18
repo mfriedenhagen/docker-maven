@@ -6,6 +6,8 @@ ENV MAVEN_VERSION_TIMESTAMP 20160718.112127-157
 RUN mkdir -p /usr/share/maven \
   && curl -fsSL https://repository.apache.org/content/repositories/snapshots/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-3.4.0-${MAVEN_VERSION_TIMESTAMP}-bin.tar.gz \
     | tar -xzC /usr/share/maven --strip-components=1 \
+  && rm -f /usr/share/maven/lib/gossip*jar \
+  && curl -fsSL https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.6/slf4j-simple-1.7.6.jar > /usr/share/maven/lib/slf4j-simple-1.7.6.jar \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
   && useradd --create-home user \
   && mkdir /home/user/.m2 \
