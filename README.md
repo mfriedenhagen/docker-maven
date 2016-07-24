@@ -1,9 +1,15 @@
 # Apache Maven 3.4.0-SNAPSHOT builds
 
+## Tags
+
+* [`3.4.0-SNAPSHOT-jdk-8`, `latest` - `Dockerfile`](https://github.com/mfriedenhagen/docker-maven/blob/master/Dockerfile)
+* [`3.4.0-SNAPSHOT-jdk-7` - `Dockerfile`](https://github.com/mfriedenhagen/docker-maven/blob/3.4.0-SNAPSHOT-jdk-7/Dockerfile)
+
+## Info
 * Mainly used for testing Apache Maven 3.4.0-SNAPSHOT more easily.
 * In contrast to the standard Maven Docker images, the user
   running Maven is not `root` but `user` and `/home/user/.m2/`
   is exposed as volume, so you may easily use your own 
   `settings.xml`
-* Because colors are not important, replace `gossip*.jar` logging jars with `slf4j-simple-1.7.6.jar`.
+* Because colors are not important, replace `gossip*.jar` and `jansi*.jar` logging jars with `slf4j-simple-1.7.6.jar`.
 * Run `docker run --rm -v $HOME/.m2:/home/user/.m2 -v $PWD:/build -w /build mfriedenhagen/docker-maven mvn clean verify`.
