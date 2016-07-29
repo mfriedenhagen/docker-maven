@@ -1,4 +1,4 @@
-FROM maven:3-jdk-8
+FROM maven:3-jdk-7
 
 RUN useradd --create-home user \
   && mkdir -p /home/user/.m2/repository \
