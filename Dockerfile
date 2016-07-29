@@ -11,10 +11,10 @@ RUN mkdir -p /usr/share/maven \
   && curl -fsSL https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.6/slf4j-simple-1.7.6.jar > /usr/share/maven/lib/slf4j-simple-1.7.6.jar \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
   && useradd --create-home user \
-  && mkdir /home/user/.m2 \
+  && mkdir -p /home/user/.m2/repository \
   && chown user:user /home/user/.m2
 
 ENV MAVEN_HOME /usr/share/maven
-VOLUME ["/home/user/.m2"]
 USER user
+VOLUME ["/home/user/.m2", "/home/user/.m2/repository"]
 CMD ["mvn", "--version"]
