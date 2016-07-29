@@ -2,8 +2,10 @@
 
 ## Tags
 
-* [`3.4.0-SNAPSHOT-jdk-8`, `latest` - `Dockerfile`](https://github.com/mfriedenhagen/docker-maven/blob/master/Dockerfile)
-* [`3.4.0-SNAPSHOT-jdk-7` - `Dockerfile`](https://github.com/mfriedenhagen/docker-maven/blob/3.4.0-SNAPSHOT-jdk-7/Dockerfile)
+* [`3.4.0-SNAPSHOT-jdk-8`, - `Dockerfile`](https://github.com/mfriedenhagen/docker-maven/blob/master/3.4.0/Dockerfile)
+* [`3.4.0-SNAPSHOT-jdk-7` - `Dockerfile`](https://github.com/mfriedenhagen/docker-maven/blob/3.4.0-SNAPSHOT-jdk-7/3.4.0/Dockerfile)
+* [`3.3.9-jdk-8`, - `Dockerfile`](https://github.com/mfriedenhagen/docker-maven/blob/master/3.3.9/Dockerfile)
+* [`3.3.9-jdk-7` - `Dockerfile`](https://github.com/mfriedenhagen/docker-maven/blob/3.4.0-SNAPSHOT-jdk-7/3.3.9/Dockerfile)
 
 ## Info
 * Mainly used for testing Apache Maven 3.4.0-SNAPSHOT more easily.
