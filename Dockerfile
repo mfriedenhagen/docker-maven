@@ -1,7 +1,7 @@
 FROM java:openjdk-7-jdk
 
 ENV MAVEN_VERSION 3.4.0-SNAPSHOT
-ENV MAVEN_VERSION_TIMESTAMP 20160723.183329-159
+ENV MAVEN_VERSION_TIMESTAMP 20160728.153313-162
 
 RUN mkdir -p /usr/share/maven \
   && curl -fsSL https://repository.apache.org/content/repositories/snapshots/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-3.4.0-${MAVEN_VERSION_TIMESTAMP}-bin.tar.gz \
@@ -11,10 +11,9 @@ RUN mkdir -p /usr/share/maven \
   && curl -fsSL https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.6/slf4j-simple-1.7.6.jar > /usr/share/maven/lib/slf4j-simple-1.7.6.jar \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
   && useradd --create-home user \
-  && mkdir /home/user/.m2 \
-  && chown user:user /home/user/.m2
+  && mkdir -p /home/user/.m2/repository \
+  && chown -R user:user /home/user/.m2 /home/user/.m2/repository
 
 ENV MAVEN_HOME /usr/share/maven
-VOLUME ["/home/user/.m2"]
 USER user
 CMD ["mvn", "--version"]
