@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk
 
 ENV MAVEN_VERSION 3.4.0-SNAPSHOT
-ENV MAVEN_VERSION_TIMESTAMP 20161009.191951-196
+ENV MAVEN_VERSION_TIMESTAMP 20161016.190521-204
 
 RUN mkdir -p /usr/share/maven \
   && curl -fsSL https://repository.apache.org/content/repositories/snapshots/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-3.4.0-${MAVEN_VERSION_TIMESTAMP}-bin.tar.gz \
