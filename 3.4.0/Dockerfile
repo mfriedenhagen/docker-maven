@@ -12,7 +12,7 @@ RUN mkdir -p /usr/share/maven \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
   && useradd --create-home user \
   && mkdir -p /home/user/.m2/repository \
-  && chown -R user:user /home/user/.m2 /home/user/.m2/repository
+  && chown -R user:user /home/user/
 
 ENV MAVEN_HOME /usr/share/maven
 USER user
