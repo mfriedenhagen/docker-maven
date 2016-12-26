@@ -1,7 +1,7 @@
 FROM openjdk:7-jdk
 
 ENV MAVEN_VERSION 3.4.0-SNAPSHOT
-ENV MAVEN_VERSION_TIMESTAMP 20161210.225431-247
+ENV MAVEN_VERSION_TIMESTAMP 20161226.182921-307
 ENV MAVEN_DOWNLOAD_LOG_LEVEL INFO
 ENV MAVEN_OPTS "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=${MAVEN_DOWNLOAD_LOG_LEVEL} -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true"
 
